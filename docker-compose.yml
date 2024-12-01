@@ -1,0 +1,31 @@
+version: '3'
+services:
+    php:
+        build:
+            context: ./
+            dockerfile: Dockerfile
+        container_name: php
+        restart: unless-stopped
+        tty: true
+        working_dir: /var/www/app
+        ports: 
+            - 80:8080
+    # mysql:
+    #     platform: linux/amd64
+    #     image: mysql
+    #     container_name: mysql
+    #     restart: unless-stopped
+    #     tty: true
+    #     ports: 
+    #         - "${DB_PORT}:${MYSQL_DOCKER_CONTAINER_PORT}"
+    #     volumes: 
+    #         - mysql:/var/lib/mysql
+    #     environment: 
+    #         MYSQL_DATABASE: laravel
+    #         MYSQL_USER: user
+    #         MYSQL_PASSWORD: user
+    #         MYSQL_ROOT_PASSWORD: root
+    #         SERVICE_TAGS: dev
+    #         SERVICE_NAME: mysql
+# volumes:
+#     mysql:
