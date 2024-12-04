@@ -63,24 +63,48 @@
   /**
    * Scroll top button
    */
-  let scrollTop = document.querySelector('.scroll-top');
+  // let scrollTop = document.querySelector('.scroll-top');
+
+  // function toggleScrollTop() {
+  //   if (scrollTop) {
+  //     window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
+  //   }
+  // }
+  // scrollTop.addEventListener('click', (e) => {
+  //   e.preventDefault();
+  //   window.scrollTo({
+  //     top: 0,
+  //     behavior: 'smooth'
+  //   });
+  // });
+
+  // window.addEventListener('load', toggleScrollTop);
+  // document.addEventListener('scroll', toggleScrollTop);
+  let scrollTopElements = document.querySelectorAll('.scroll-top');
 
   function toggleScrollTop() {
-    if (scrollTop) {
-      window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
-    }
+      scrollTopElements.forEach((scrollTop) => {
+          if (window.scrollY > 100) {
+              scrollTop.classList.add('active');
+          } else {
+              scrollTop.classList.remove('active');
+          }
+      });
   }
-  scrollTop.addEventListener('click', (e) => {
-    e.preventDefault();
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
+  
+  scrollTopElements.forEach((scrollTop) => {
+      scrollTop.addEventListener('click', (e) => {
+          e.preventDefault();
+          window.scrollTo({
+              top: 0,
+              behavior: 'smooth'
+          });
+      });
   });
-
+  
   window.addEventListener('load', toggleScrollTop);
   document.addEventListener('scroll', toggleScrollTop);
-
+  
   /**
    * Animation on scroll function and init
    */
