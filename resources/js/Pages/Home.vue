@@ -1,59 +1,56 @@
 <script setup lang="ts">
 import { Head, Link } from '@inertiajs/vue3';
 import AOS from 'aos';
-import { onMounted } from 'vue';
-
+import { onMounted, ref } from 'vue';
+import '../../css/bootstrap-app.css';
+import { useI18n } from 'vue-i18n';
 defineProps<{
-    canLogin?: boolean;
-    canRegister?: boolean;
-    laravelVersion: string;
-    phpVersion: string;
 }>();
 
+const isLoading = ref(true);
 AOS.init({
     duration: 800,
     easing: 'ease',
     once: true,
 });
 
-function handleImageError() {
-    document.getElementById('screenshot-container')?.classList.add('!hidden');
-    document.getElementById('docs-card')?.classList.add('!row-span-1');
-    document.getElementById('docs-card-content')?.classList.add('!flex-row');
-    document.getElementById('background')?.classList.add('!hidden');
-}
 onMounted(() => {
     import('../app.js');
+    setTimeout(() => {
+        isLoading.value = false;
+    }, 500);
 });
-import '../../css/bootstrap-app.css';
-
+const { locale } = useI18n();
+const language = ref('vi');
+const changeLanguage = (lang: string) => {
+    language.value = lang;
+    locale.value = lang;
+    console.log('change language', lang);
+};
 </script>
 
 <template>
 
-    <Head title="Welcome" />
+    <Head title="FPT Telecom" />
     <header id="header" class="header d-flex align-items-center fixed-top">
         <div
             class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
-            <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-                <!-- Uncomment the line below if you also wish to use an image logo -->
-                <!-- <img src="assets/img/logo.png" alt=""> -->
-                <h1 class="sitename">iLanding</h1>
+            <a href="#" class="logo d-flex align-items-center me-auto me-xl-0">
+                <h1 class="sitename"><img src="/images/fpt-tel.svg" alt=""></h1>
             </a>
-
             <nav id="navmenu" class="navmenu">
                 <ul>
-                    <li><a href="#hero" class="active">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#pricing">Pricing</a></li>
-                    <li class="dropdown"><a href="#"><span>Dropdown</span> <i
+                    <li><a href="#hero" class="active">{{ $t('message.home') }}</a></li>
+                    <li><a href="#about">{{ $t('message.about') }}</a></li>
+                    <li><a href="#features">{{ $t('message.features') }}</a></li>
+                    <li><a href="#services">{{ $t('message.services') }}</a></li>
+                    <li><a href="#pricing">{{ $t('message.pricing') }}</a></li>
+                    <li class="dropdown"><a href="#"><span>{{ $t('message.dropdown') }}</span> <i
                                 class="bi bi-chevron-down toggle-dropdown"></i></a>
                         <ul>
                             <li><a href="#">Dropdown 1</a></li>
-                            <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i
+                            <li class="dropdown"><a href="#"><span>{{ $t('message.deepDropdown') }}</span> <i
                                         class="bi bi-chevron-down toggle-dropdown"></i></a>
                                 <ul>
                                     <li><a href="#">Deep Dropdown 1</a></li>
@@ -68,13 +65,19 @@ import '../../css/bootstrap-app.css';
                             <li><a href="#">Dropdown 4</a></li>
                         </ul>
                     </li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#contact">{{ $t('message.contact') }}</a></li>
                 </ul>
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
             </nav>
 
-            <a class="btn-getstarted" href="index.html#about">Get Started</a>
-
+            <button class="btn-getstarted" :class="{ hidden: language === 'vi' }" href="index.html#about"
+                @click="changeLanguage('vi')">
+                <img src="/images/vi.png" alt="flag-vi" style="border-radius: 10px;" width="50px" height="25px">
+            </button>
+            <button class="btn-getstarted" :class="{ hidden: language === 'en' }" href="index.html#about"
+                @click="changeLanguage('en')">
+                <img src="/images/en.png" alt="flag-en" style="border-radius: 10px;" width="50px" height="25px">
+            </button>
         </div>
     </header>
 
@@ -82,9 +85,7 @@ import '../../css/bootstrap-app.css';
 
         <!-- Hero Section -->
         <section id="hero" class="hero section">
-
             <div class="container" data-aos="fade-up" data-aos-delay="100">
-
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <div class="hero-content" data-aos="fade-up" data-aos-delay="200">
@@ -1208,7 +1209,7 @@ import '../../css/bootstrap-app.css';
             <div class="row gy-4">
                 <div class="col-lg-4 col-md-6 footer-about">
                     <a href="index.html" class="logo d-flex align-items-center">
-                        <span class="sitename">iLanding</span>
+                        <span class="sitename">FPT Telecom</span>
                     </a>
                     <div class="footer-contact pt-3">
                         <p>A108 Adam Street</p>
@@ -1272,7 +1273,8 @@ import '../../css/bootstrap-app.css';
         </div>
 
         <div class="container copyright text-center mt-4">
-            <p>© <span>Copyright</span> <strong class="px-1 sitename">iLanding</strong> <span>All Rights Reserved</span>
+            <p>© <span>Copyright</span> <strong class="px-1 sitename">FPT Telecom</strong> <span>All Rights
+                    Reserved</span>
             </p>
             <div class="credits">
                 <!-- All the links in the footer should remain intact. -->
@@ -1316,6 +1318,16 @@ import '../../css/bootstrap-app.css';
             <a href="tel:0909873192">
                 <p class="fone">0909873192</p>
             </a>
+        </div>
+    </div>
+    <div id="loading" v-if="isLoading">
+        <div id="loading-center">
+            <div id="loading-center-absolute">
+                <div class="object" id="object_four"></div>
+                <div class="object" id="object_three"></div>
+                <div class="object" id="object_two"></div>
+                <div class="object" id="object_one"></div>
+            </div>
         </div>
     </div>
 </template>
