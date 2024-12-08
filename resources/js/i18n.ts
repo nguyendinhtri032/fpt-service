@@ -22,7 +22,17 @@ const messages = {
         noAdditionalApNeeded: 'No need to invest in additional APs, saving costs for customers.',
         packageLossRateReduced: 'The package loss rate is reduced by 48% compared to existing devices, providing a seamless service experience.',
         coverageExpanded25: 'Expand coverage by 25%',
-        supports30Devices: 'Supports 30 devices'
+        supports30Devices: 'Supports 30 devices',
+        chooseService: 'Service package',
+        chooseServiceDescription: 'Choose the Right Internet Package for Your Business.',
+        playVideo: 'Play video',
+        registerNow: 'Register Now',
+        togetherTowardsSuccess: 'Together towards success.',
+        callUsAnytime: 'Call us anytime',
+        price: 'Pricing',
+        outsourcingItServices: 'Outsourcing IT services',
+        featuredIncluded: 'Featured Included',
+        mostPopular: 'Most Popular'
       },
     },
     vi: {
@@ -42,11 +52,21 @@ const messages = {
         corporateClients: 'Khách hàng doanh nghiệp',
         coverageAcrossProvincesAndCities: 'Phủ rộng khắp tỉnh thành',
         personnel: 'Nhân sự',
-        experience: 'Kinh nghiệm',
+        experience: 'Năm kinh nghiệm',
         noAdditionalApNeeded: 'Không cần đầu tư thêm AP, tiết kiệm chi phí cho khách hàng.',
         packageLossRateReduced: 'Tỉ lệ mất gói giảm 48% so với thiết bị hiện hữu, trải nghiệm dịch vụ liền mạch.',
         coverageExpanded25: 'Mở rộng 25% vùng phủ',
-        supports30Devices: 'Chịu tải 30 thiết bị'
+        supports30Devices: 'Chịu tải 30 thiết bị',
+        chooseService: 'Chọn gói dịch vụ',
+        chooseServiceDescription: 'Chọn gói Internet phù hợp với doanh nghiệp của bạn',
+        playVideo: 'Xem ngay',
+        registerNow: 'Đăng kí ngay',
+        togetherTowardsSuccess: 'Cùng đi tới thành công.',
+        callUsAnytime: 'Liên hệ ngay.',
+        price: 'Bảng giá',
+        outsourcingItServices: 'Dịch vụ IT thuê ngoài',
+        featuredIncluded: 'Các tính năng bao gồm',
+        mostPopular: 'Phổ biến nhất'
       },
     },
   };

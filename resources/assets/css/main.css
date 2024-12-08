@@ -22,7 +22,7 @@
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
   --default-color: #212529; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #2d465e; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #0d83fd; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --accent-color: #55b3d9; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
@@ -30,11 +30,11 @@
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
   --nav-color: #212529;  /* The default color of the main navmenu links */
-  --nav-hover-color: #0d83fd; /* Applied to main navmenu links when they are hovered over or active */
+  --nav-hover-color: #55b3d9; /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
   --nav-dropdown-color: #212529; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #0d83fd; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-dropdown-hover-color: #55b3d9; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
@@ -45,7 +45,7 @@
 }
 
 .dark-background {
-  --background-color: #0d83fd;
+  --background-color: #55b3d9;
   --default-color: #ffffff;
   --heading-color: #ffffff;
   --surface-color: #409dfd;
@@ -762,12 +762,27 @@ section,
   .hero .hero-content .hero-buttons {
     justify-content: center;
   }
+  .feature-custom {
+    height: 350px !important;
+    background-position: 30px 30px !important;
+  }
 }
 
 @media (max-width: 575px) {
   .hero .hero-content h1 {
     font-size: 2rem;
   }
+  .feature-custom {
+    height: 250px !important;
+    background-position: -15px 30px !important;
+  }
+}
+.feature-custom {
+  height: 550px;
+  background-image: url(/images/swiper/banner3.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 70px 0px;
 }
 
 .hero .company-badge {
@@ -2510,84 +2525,6 @@ section,
     top: -1px;
 }
 
-#loading{
-	background-color: var(--accent-color);
-	height: 100%;
-	width: 100%;
-	position: fixed;
-	z-index: 999;
-	margin-top: 0px;
-	top: 0px;
-}
-#loading-center{
-	width: 100%;
-	height: 100%;
-	position: relative;
-	}
-#loading-center-absolute {
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	height: 200px;
-	width: 200px;
-	margin-top: -100px;
-	margin-left: -100px;
-	-ms-transform: rotate(-135deg); 
-   	-webkit-transform: rotate(-135deg); 
-    transform: rotate(-135deg);
-
-}
-.object{
-
-	-moz-border-radius: 50% 50% 50% 50%;
-	-webkit-border-radius: 50% 50% 50% 50%;
-	border-radius: 50% 50% 50% 50%;
-	position: absolute;
-	border-top: 5px solid #FFF;
-	border-bottom: 5px solid transparent;
-	border-left:  5px solid #FFF;
-	border-right: 5px solid transparent;
-	
-	-webkit-animation: animate 2s infinite;
-	animation: animate 2s infinite;	
-
-	}
-
-
-#object_one{
-	left: 75px;
-	top: 75px;
-	width: 50px;
-	height: 50px;
-	}
-							
-#object_two{
-	left: 65px;
-	top: 65px;
-	width: 70px;
-	height: 70px;
-	-webkit-animation-delay: 0.2s;
-    animation-delay: 0.2s;
-	}
-		
-#object_three{
-	left: 55px;
-	top: 55px;
-	width: 90px;
-	height: 90px;
-	-webkit-animation-delay: 0.4s;
-    animation-delay: 0.4s;
-	}
-#object_four{
-	left: 45px;
-	top: 45px;
-	width: 110px;
-	height: 110px;
-	-webkit-animation-delay: 0.6s;
-    animation-delay: 0.6s;
-	
-	}	
-
 
 	@keyframes animate {
 	
@@ -2602,3 +2539,151 @@ section,
   .sitename {
     padding: 8px 20px;
   }
+  
+  .loadingspinner-container {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    margin-top: 0px;
+    top: 0px;
+    background-color: #fff;
+  }
+  .loadingspinner {
+    --square: 26px;
+    --offset: 30px;
+
+    --duration: 2.4s;
+    --delay: 0.2s;
+    --timing-function: ease-in-out;
+
+    --in-duration: 0.4s;
+    --in-delay: 0.1s;
+    --in-timing-function: ease-out;
+
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 50%;
+    top: 42%;
+    height: 200px;
+    width: 200px;
+    margin-top: -100px;
+    margin-left: -100px;
+  }
+.loadingspinner-container img{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 50%;
+  top: 42%;
+  height: 200px;
+  width: 200px;
+  margin-top: -100px;
+  margin-left: -100px;
+}
+  .loadingspinner div {
+    background-color: #f06e28;
+    border: none;
+    border-radius: 2px;
+    width: var(--square);
+    height: var(--square);
+    position: absolute;
+    padding: 0px;
+    margin: 40px;
+    font-size: 6pt;
+    color: black;
+  }
+
+  .loadingspinner #square1 {
+    left: calc( 0 * var(--offset) );
+    top:  calc( 0 * var(--offset) );
+    animation: square1 var(--duration) var(--delay) var(--timing-function) infinite,
+               squarefadein var(--in-duration) calc(1 * var(--in-delay)) var(--in-timing-function) both;
+  }
+
+  .loadingspinner #square2 {
+    left: calc( 0 * var(--offset) );
+    top:  calc( 1 * var(--offset) );
+    animation: square2 var(--duration) var(--delay) var(--timing-function) infinite,
+              squarefadein var(--in-duration) calc(1 * var(--in-delay)) var(--in-timing-function) both;
+  }
+  
+  .loadingspinner #square3 {
+    left: calc( 1 * var(--offset) );
+    top:  calc( 1 * var(--offset) );
+    animation: square3 var(--duration) var(--delay) var(--timing-function) infinite,
+               squarefadein var(--in-duration) calc(2 * var(--in-delay)) var(--in-timing-function) both;
+  }
+
+  .loadingspinner #square4 {
+    left: calc( 2 * var(--offset) );
+    top:  calc( 1 * var(--offset) );
+    animation: square4 var(--duration) var(--delay) var(--timing-function) infinite,
+               squarefadein var(--in-duration) calc(3 * var(--in-delay)) var(--in-timing-function) both;
+  }
+
+  .loadingspinner #square5 {
+    left: calc( 3 * var(--offset) );
+    top:  calc( 1 * var(--offset) );
+    animation: square5 var(--duration) var(--delay) var(--timing-function) infinite,
+               squarefadein var(--in-duration) calc(4 * var(--in-delay)) var(--in-timing-function) both;
+  }
+
+  @keyframes square1 {
+    0%      {left: calc( 0 * var(--offset) ); top: calc( 0 * var(--offset) ); }
+    8.333%  {left: calc( 0 * var(--offset) ); top: calc( 1 * var(--offset) ); }
+    100%    {left: calc( 0 * var(--offset) ); top: calc( 1 * var(--offset) ); }
+  }
+
+  @keyframes square2 {
+    0%      {left: calc( 0 * var(--offset) ); top: calc( 1 * var(--offset) ); }
+    8.333%  {left: calc( 0 * var(--offset) ); top: calc( 2 * var(--offset) ); }
+    16.67%  {left: calc( 1 * var(--offset) ); top: calc( 2 * var(--offset) ); }
+    25.00%  {left: calc( 1 * var(--offset) ); top: calc( 1 * var(--offset) ); }
+    83.33%  {left: calc( 1 * var(--offset) ); top: calc( 1 * var(--offset) ); }
+    91.67%  {left: calc( 1 * var(--offset) ); top: calc( 0 * var(--offset) ); }
+    100%    {left: calc( 0 * var(--offset) ); top: calc( 0 * var(--offset) ); }
+  }
+
+  @keyframes square3 {
+    0%,100% {left: calc( 1 * var(--offset) ); top: calc( 1 * var(--offset) ); }
+    16.67%  {left: calc( 1 * var(--offset) ); top: calc( 1 * var(--offset) ); }
+    25.00%  {left: calc( 1 * var(--offset) ); top: calc( 0 * var(--offset) ); }
+    33.33%  {left: calc( 2 * var(--offset) ); top: calc( 0 * var(--offset) ); }
+    41.67%  {left: calc( 2 * var(--offset) ); top: calc( 1 * var(--offset) ); }
+    66.67%  {left: calc( 2 * var(--offset) ); top: calc( 1 * var(--offset) ); }
+    75.00%  {left: calc( 2 * var(--offset) ); top: calc( 2 * var(--offset) ); }
+    83.33%  {left: calc( 1 * var(--offset) ); top: calc( 2 * var(--offset) ); }
+    91.67%  {left: calc( 1 * var(--offset) ); top: calc( 1 * var(--offset) ); }
+  }
+
+  @keyframes square4 {
+    0%      {left: calc( 2 * var(--offset) ); top: calc( 1 * var(--offset) ); }
+    33.33%  {left: calc( 2 * var(--offset) ); top: calc( 1 * var(--offset) ); }
+    41.67%  {left: calc( 2 * var(--offset) ); top: calc( 2 * var(--offset) ); }
+    50.00%  {left: calc( 3 * var(--offset) ); top: calc( 2 * var(--offset) ); }
+    58.33%  {left: calc( 3 * var(--offset) ); top: calc( 1 * var(--offset) ); }
+    100%    {left: calc( 3 * var(--offset) ); top: calc( 1 * var(--offset) ); }
+  }
+
+  @keyframes square5 {
+    0%      {left: calc( 3 * var(--offset) ); top: calc( 1 * var(--offset) ); }
+    50.00%  {left: calc( 3 * var(--offset) ); top: calc( 1 * var(--offset) ); }
+    58.33%  {left: calc( 3 * var(--offset) ); top: calc( 0 * var(--offset) ); }
+    66.67%  {left: calc( 2 * var(--offset) ); top: calc( 0 * var(--offset) ); }
+    75.00%  {left: calc( 2 * var(--offset) ); top: calc( 1 * var(--offset) ); }
+    100%    {left: calc( 2 * var(--offset) ); top: calc( 1 * var(--offset) ); }
+  }
+
+  @keyframes squarefadein {
+    0%      {transform: scale(0.75); opacity: 0.0;}
+    100%    {transform: scale(1.0); opacity: 1.0;}
+  }
+

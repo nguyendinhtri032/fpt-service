@@ -7,12 +7,10 @@ import Carousel from '@/Components/Home/Carousel.vue';
 import Hero from '@/Components/Home/Hero.vue';
 import Header from '@/Components/Home/Header.vue';
 import Feature from '@/Components/Home/Feature.vue';
-import Spinner from '@/Components/Home/Spinner.vue';
-import ServiceIT from '@/Components/Home/ServiceIT.vue';
 defineProps<{
 }>();
 
-
+const isLoading = ref(true);
 AOS.init({
     duration: 500,
     easing: 'ease',
@@ -21,10 +19,14 @@ AOS.init({
 
 onMounted(() => {
     import('../app.js');
+    setTimeout(() => {
+        isLoading.value = false;
+    }, 500);
+
+
 });
 </script>
 <template>
-
     <Head title="FPT Telecom" />
     <Header />
     <main class="main">
@@ -115,8 +117,8 @@ onMounted(() => {
                                     <div class="contact-info d-flex align-items-center gap-2">
                                         <i class="bi bi-telephone-fill"></i>
                                         <div>
-                                            <p class="contact-label">{{ $t('message.callUsAnytime') }}</p>
-                                            <p class="contact-number"><a href="tel:0909873192">0909873192</a></p>
+                                            <p class="contact-label">Call us anytime</p>
+                                            <p class="contact-number">+123 456-789</p>
                                         </div>
                                     </div>
                                 </div>
@@ -537,7 +539,142 @@ onMounted(() => {
 
         </section><!-- /Services Section -->
 
-       <ServiceIT />
+        <!-- Pricing Section -->
+        <section id="pricing" class="pricing section light-background">
+
+            <!-- Section Title -->
+            <div class="container section-title" data-aos="fade-up">
+                <h2>Pricing</h2>
+                <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+            </div><!-- End Section Title -->
+
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+                <div class="row g-4 justify-content-center">
+
+                    <!-- Basic Plan -->
+                    <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="pricing-card">
+                            <h3>Basic Plan</h3>
+                            <div class="price">
+                                <span class="currency">$</span>
+                                <span class="amount">9.9</span>
+                                <span class="period">/ month</span>
+                            </div>
+                            <p class="description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                                accusantium doloremque laudantium totam.</p>
+
+                            <h4>Featured Included:</h4>
+                            <ul class="features-list">
+                                <li>
+                                    <i class="bi bi-check-circle-fill"></i>
+                                    Duis aute irure dolor
+                                </li>
+                                <li>
+                                    <i class="bi bi-check-circle-fill"></i>
+                                    Excepteur sint occaecat
+                                </li>
+                                <li>
+                                    <i class="bi bi-check-circle-fill"></i>
+                                    Nemo enim ipsam voluptatem
+                                </li>
+                            </ul>
+
+                            <a href="#" class="btn btn-primary">
+                                Buy Now
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Standard Plan -->
+                    <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="pricing-card popular">
+                            <div class="popular-badge">Most Popular</div>
+                            <h3>Standard Plan</h3>
+                            <div class="price">
+                                <span class="currency">$</span>
+                                <span class="amount">19.9</span>
+                                <span class="period">/ month</span>
+                            </div>
+                            <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui
+                                blanditiis praesentium voluptatum.</p>
+
+                            <h4>Featured Included:</h4>
+                            <ul class="features-list">
+                                <li>
+                                    <i class="bi bi-check-circle-fill"></i>
+                                    Lorem ipsum dolor sit amet
+                                </li>
+                                <li>
+                                    <i class="bi bi-check-circle-fill"></i>
+                                    Consectetur adipiscing elit
+                                </li>
+                                <li>
+                                    <i class="bi bi-check-circle-fill"></i>
+                                    Sed do eiusmod tempor
+                                </li>
+                                <li>
+                                    <i class="bi bi-check-circle-fill"></i>
+                                    Ut labore et dolore magna
+                                </li>
+                            </ul>
+
+                            <a href="#" class="btn btn-light">
+                                Buy Now
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Premium Plan -->
+                    <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="pricing-card">
+                            <h3>Premium Plan</h3>
+                            <div class="price">
+                                <span class="currency">$</span>
+                                <span class="amount">39.9</span>
+                                <span class="period">/ month</span>
+                            </div>
+                            <p class="description">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse
+                                quam nihil molestiae.</p>
+
+                            <h4>Featured Included:</h4>
+                            <ul class="features-list">
+                                <li>
+                                    <i class="bi bi-check-circle-fill"></i>
+                                    Temporibus autem quibusdam
+                                </li>
+                                <li>
+                                    <i class="bi bi-check-circle-fill"></i>
+                                    Saepe eveniet ut et voluptates
+                                </li>
+                                <li>
+                                    <i class="bi bi-check-circle-fill"></i>
+                                    Nam libero tempore soluta
+                                </li>
+                                <li>
+                                    <i class="bi bi-check-circle-fill"></i>
+                                    Cumque nihil impedit quo
+                                </li>
+                                <li>
+                                    <i class="bi bi-check-circle-fill"></i>
+                                    Maxime placeat facere possimus
+                                </li>
+                            </ul>
+
+                            <a href="#" class="btn btn-primary">
+                                Buy Now
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section><!-- /Pricing Section -->
 
         <!-- Faq Section -->
         <section class="faq-9 faq section light-background" id="faq">
@@ -676,11 +813,8 @@ onMounted(() => {
                                 </div>
                                 <div class="content">
                                     <h4>Our Location</h4>
-                                    <a
-                                        href="https://www.google.com/maps/search/86+Road+Broklyn+Street,+600+New+York,+USA/@40.6897806,-74.0278086,12z/data=!3m1!4b1">
-                                        <p>124 Đường Sương Nguyệt Anh, Phường Bến Thành, </p>
-                                        <p>Quận 1, Thành phố Hồ Chí Minh</p>
-                                    </a>
+                                    <p>A108 Adam Street</p>
+                                    <p>New York, NY 535022</p>
                                 </div>
                             </div>
 
@@ -690,7 +824,8 @@ onMounted(() => {
                                 </div>
                                 <div class="content">
                                     <h4>Phone Number</h4>
-                                    <p><a href="tel:0909873192">0909873192</a></p>
+                                    <p>+1 5589 55488 55</p>
+                                    <p>+1 6678 254445 41</p>
                                 </div>
                             </div>
 
@@ -700,8 +835,8 @@ onMounted(() => {
                                 </div>
                                 <div class="content">
                                     <h4>Email Address</h4>
-                                    <p><a href="mailto:anhdtn23@fpt.com">
-                                            anhdtn23@fpt.com</a></p>
+                                    <p>info@example.com</p>
+                                    <p>contact@example.com</p>
                                 </div>
                             </div>
                         </div>
@@ -765,17 +900,10 @@ onMounted(() => {
                         <span class="sitename">FPT Telecom</span>
                     </a>
                     <div class="footer-contact pt-3">
-                        <p> <strong>Address:</strong>
-                            <a
-                                href="https://www.google.com/maps/search/86+Road+Broklyn+Street,+600+New+York,+USA/@40.6897806,-74.0278086,12z/data=!3m1!4b1">
-                                <p>124 Đường Sương Nguyệt Anh, Phường Bến Thành, </p>
-                                <p>Quận 1, Thành phố Hồ Chí Minh</p>
-                            </a>
-                        </p>
-
-                        <p><strong>Phone: </strong><a href="tel:0909873192">0909873192</a></p>
-                        <p><strong>Email: </strong><a href="mailto:anhdtn23@fpt.com">
-                                anhdtn23@fpt.com</a></p>
+                        <p>A108 Adam Street</p>
+                        <p>New York, NY 535022</p>
+                        <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
+                        <p><strong>Email:</strong> <span>info@example.com</span></p>
                     </div>
                     <div class="social-links d-flex mt-4">
                         <a href=""><i class="bi bi-twitter-x"></i></a>
@@ -880,5 +1008,14 @@ onMounted(() => {
             </a>
         </div>
     </div>
-<Spinner/>
+    <div id="loading" v-if="isLoading">
+        <div id="loading-center">
+            <div id="loading-center-absolute">
+                <div class="object" id="object_four"></div>
+                <div class="object" id="object_three"></div>
+                <div class="object" id="object_two"></div>
+                <div class="object" id="object_one"></div>
+            </div>
+        </div>
+    </div>
 </template>
