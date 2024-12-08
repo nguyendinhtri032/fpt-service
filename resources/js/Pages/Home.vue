@@ -4,6 +4,8 @@ import AOS from 'aos';
 import { onMounted, ref } from 'vue';
 import '../../css/bootstrap-app.css';
 import { useI18n } from 'vue-i18n';
+import Swiper from 'swiper';
+
 defineProps<{
 }>();
 
@@ -19,14 +21,48 @@ onMounted(() => {
     setTimeout(() => {
         isLoading.value = false;
     }, 500);
+    const swiper = new Swiper('.init-swiper', {
+        loop: true,
+        speed: 600,
+        autoplay: {
+            delay: 3000,
+        },
+        slidesPerView: 'auto',
+        pagination: {
+            el: '.swiper-pagination',
+            type: 'bullets',
+            clickable: true,
+        },
+        effect: 'fade',
+        breakpoints: {
+            320: {
+                slidesPerView: 1,
+                spaceBetween: 0,
+            },
+            480: {
+                slidesPerView: 1,
+                spaceBetween: 0,
+            },
+            640: {
+                slidesPerView: 1,
+                spaceBetween: 0,
+            },
+            992: {
+                slidesPerView: 1,
+                spaceBetween: 0,
+            },
+        },
+    });
 });
 const { locale } = useI18n();
 const language = ref('vi');
 const changeLanguage = (lang: string) => {
     language.value = lang;
     locale.value = lang;
-    console.log('change language', lang);
 };
+
+
+
 </script>
 
 <template>
@@ -83,8 +119,28 @@ const changeLanguage = (lang: string) => {
 
     <main class="main">
 
+        <!-- Clients Section -->
+        <section id="clients" class="clients section position-relative swiper-custom" style="padding: 0px !important;">
+            <div class="" data-aos="fade-up" data-aos-delay="100">
+                <div class="swiper init-swiper">
+                    <div class="swiper-wrapper align-items-center">
+                        <div class="swiper-slide"><img src="/images/swiper/banner1.webp" class="img-fluid" alt="">
+                        </div>
+                        <div class="swiper-slide"><img src="/images/swiper/banner2.jpg" class="img-fluid" alt="">
+                        </div>
+                        <div class="swiper-slide"><img src="/images/swiper/banner3.webp" class="img-fluid" alt="">
+                        </div>
+                        <div class="swiper-slide"><img src="/images/swiper/banner4.webp" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                    <!-- <div class="swiper-pagination"></div> -->
+                </div>
+            </div>
+
+        </section><!-- /Clients Section -->
+
         <!-- Hero Section -->
-        <section id="hero" class="hero section">
+        <section id="hero" class="hero section" style="padding-top: 0px !important;">
             <div class="container" data-aos="fade-up" data-aos-delay="100">
                 <div class="row align-items-center">
                     <div class="col-lg-6">
@@ -95,14 +151,16 @@ const changeLanguage = (lang: string) => {
                             </div>
 
                             <h1 class="mb-4">
-                                Maecenas Vitae <br>
-                                Consectetur Led <br>
-                                <span class="accent-text">Vestibulum Ante</span>
+                                {{ $t('message.solution') }}<br>
+
+                                <span class="accent-text">Internet</span><br>
+                                {{ $t('message.exclusiveForBusinesses') }}
                             </h1>
 
                             <p class="mb-4 mb-md-5">
-                                Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt.
-                                Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna.
+                                {{ $t('message.wifi') }}<br>
+                                {{ $t('message.noAdditionalApNeeded')}} <br>
+                                {{  $t('message.packageLossRateReduced') }}
                             </p>
 
                             <div class="hero-buttons">
@@ -118,7 +176,7 @@ const changeLanguage = (lang: string) => {
 
                     <div class="col-lg-6">
                         <div class="hero-image" data-aos="zoom-out" data-aos-delay="300">
-                            <img src="assets/img/illustration-1.webp" alt="Hero Image" class="img-fluid">
+                            <img src="/images/2.png" alt="Hero Image" class="img-fluid hero-image-custom">
 
                             <div class="customers-badge">
                                 <div class="customer-avatars">
@@ -129,7 +187,10 @@ const changeLanguage = (lang: string) => {
                                     <img src="assets/img/avatar-5.webp" alt="Customer 5" class="avatar">
                                     <span class="avatar more">12+</span>
                                 </div>
-                                <p class="mb-0 mt-2">12,000+ lorem ipsum dolor sit amet consectetur adipiscing elit</p>
+                                <p class="mb-0 mt-2">
+                                {{  $t('message.coverageExpanded25') }} <br>
+                                {{ $t('message.supports30Devices') }}
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -142,8 +203,8 @@ const changeLanguage = (lang: string) => {
                                 <i class="bi bi-trophy"></i>
                             </div>
                             <div class="stat-content">
-                                <h4>3x Won Awards</h4>
-                                <p class="mb-0">Vestibulum ante ipsum</p>
+                                <h4>1000+</h4>
+                                <p class="mb-0">{{ $t('message.corporateClients') }}</p>
                             </div>
                         </div>
                     </div>
@@ -153,8 +214,8 @@ const changeLanguage = (lang: string) => {
                                 <i class="bi bi-briefcase"></i>
                             </div>
                             <div class="stat-content">
-                                <h4>6.5k Faucibus</h4>
-                                <p class="mb-0">Nullam quis ante</p>
+                                <h4>63</h4>
+                                <p class="mb-0">{{ $t('message.coverageAcrossProvincesAndCities') }}</p>
                             </div>
                         </div>
                     </div>
@@ -164,8 +225,8 @@ const changeLanguage = (lang: string) => {
                                 <i class="bi bi-graph-up"></i>
                             </div>
                             <div class="stat-content">
-                                <h4>80k Mauris</h4>
-                                <p class="mb-0">Etiam sit amet orci</p>
+                                <h4>1400+</h4>
+                                <p class="mb-0">{{ $t('message.personnel') }}</p>
                             </div>
                         </div>
                     </div>
@@ -175,8 +236,8 @@ const changeLanguage = (lang: string) => {
                                 <i class="bi bi-award"></i>
                             </div>
                             <div class="stat-content">
-                                <h4>6x Phasellus</h4>
-                                <p class="mb-0">Vestibulum ante ipsum</p>
+                                <h4>35+</h4>
+                                <p class="mb-0">{{ $t('message.experience') }}</p>
                             </div>
                         </div>
                     </div>
@@ -597,36 +658,7 @@ const changeLanguage = (lang: string) => {
 
         </section><!-- /Call To Action Section -->
 
-        <!-- Clients Section -->
-        <section id="clients" class="clients section">
 
-            <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-                <div class="swiper init-swiper">
-                    <div class="swiper-wrapper align-items-center">
-                        <div class="swiper-slide"><img src="assets/img/clients/client-1.png" class="img-fluid" alt="">
-                        </div>
-                        <div class="swiper-slide"><img src="assets/img/clients/client-2.png" class="img-fluid" alt="">
-                        </div>
-                        <div class="swiper-slide"><img src="assets/img/clients/client-3.png" class="img-fluid" alt="">
-                        </div>
-                        <div class="swiper-slide"><img src="assets/img/clients/client-4.png" class="img-fluid" alt="">
-                        </div>
-                        <div class="swiper-slide"><img src="assets/img/clients/client-5.png" class="img-fluid" alt="">
-                        </div>
-                        <div class="swiper-slide"><img src="assets/img/clients/client-6.png" class="img-fluid" alt="">
-                        </div>
-                        <div class="swiper-slide"><img src="assets/img/clients/client-7.png" class="img-fluid" alt="">
-                        </div>
-                        <div class="swiper-slide"><img src="assets/img/clients/client-8.png" class="img-fluid" alt="">
-                        </div>
-                    </div>
-                    <div class="swiper-pagination"></div>
-                </div>
-
-            </div>
-
-        </section><!-- /Clients Section -->
 
         <!-- Testimonials Section -->
         <section id="testimonials" class="testimonials section light-background">

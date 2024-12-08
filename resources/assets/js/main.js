@@ -142,7 +142,7 @@
     });
   }
 
-  window.addEventListener("load", initSwiper);
+  // window.addEventListener("load", initSwiper);
 
   /**
    * Initiate Pure Counter
