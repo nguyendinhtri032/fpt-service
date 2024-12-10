@@ -61,7 +61,7 @@ COPY --chmod=777 ./ /var/www/app/
 
 COPY --from=composer_builder /app/vendor /var/www/app/vendor
 COPY --from=node_builder /app/public/build /var/www/app/public/build
-
+COPY --from=node_builder /bootstrap/ssr /var/www/bootstrap/ssr
 # Install Composer
 # COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
 # RUN composer install --optimize-autoloader --no-interaction --no-progress --prefer-dist
