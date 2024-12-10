@@ -13,14 +13,15 @@ defineProps<{
 }>();
 
 
-AOS.init({
+
+
+onMounted(() => {
+    import('../app.js');
+    AOS.init({
     duration: 500,
     easing: 'ease',
     once: true,
 });
-
-onMounted(() => {
-    import('../app.js');
 });
 </script>
 <template>
