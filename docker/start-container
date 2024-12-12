@@ -1,6 +1,8 @@
 #!/usr/bin/env sh
 if [ $# -gt 0 ]; then
+    echo "Executing custom command: $@" >&2
     exec gosu $UGNAME "$@"
 else
+    echo "Starting supervisord with configuration /etc/supervisor/conf.d/supervisord.conf" >&2
     exec /usr/bin/supervisord -c /etc/supervisor/conf.d/supervisord.conf
 fi
