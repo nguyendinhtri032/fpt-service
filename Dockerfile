@@ -33,7 +33,7 @@ RUN apk update && apk add \
     unzip \
     bash \
     nginx \
-    supervisor \
+    supervisord \
     shadow
 
 # Create user and group
