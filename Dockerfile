@@ -35,7 +35,7 @@ RUN apk update && apk add \
     nginx \
     supervisor \
     shadow \
-    nodejs=20.0.0-r0
+    nodejs
 
 # Create user and group
 RUN groupadd --system --gid ${GROUP_GID} ${UGNAME} && \
