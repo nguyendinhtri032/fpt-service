@@ -3,19 +3,19 @@ ARG UBUNTU_VERSION=20.04
 ARG PHP_VERSION=8.2
 
 # Stage 0: Build composer
-FROM php:${PHP_VERSION}-fpm-alpine as composer_builder
-WORKDIR /app
-COPY --chmod=777 . .
-COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
-RUN composer install --optimize-autoloader --no-interaction --no-progress --prefer-dist
+# FROM php:${PHP_VERSION}-fpm-alpine as composer_builder
+# WORKDIR /app
+# COPY --chmod=777 . .
+# COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
+# RUN composer install --optimize-autoloader --no-interaction --no-progress --prefer-dist
 
 # Stage 1: Build Node.js application
-FROM node:${NODE_VERSION}-alpine AS node_builder
-WORKDIR /app
-COPY --chmod=777 . .
-RUN npm install
-COPY --from=composer_builder /app/vendor /app/vendor
-RUN npm run build
+# FROM node:${NODE_VERSION}-alpine AS node_builder
+# WORKDIR /app
+# COPY --chmod=777 . .
+# RUN npm install
+# COPY --from=composer_builder /app/vendor /app/vendor
+# RUN npm run build
 
 # Stage 2: Set up PHP environment
 FROM php:${PHP_VERSION}-fpm-alpine
@@ -59,10 +59,13 @@ COPY docker/php.ini /etc/php/${PHP_VERSION}/fpm/conf.d/custom.ini
 
 # Copy files from Node.js build stage to PHP stage
 COPY --chmod=777 ./ /var/www/app/
-
-COPY --from=composer_builder /app/vendor /var/www/app/vendor
-COPY --from=node_builder /app/public/build /var/www/app/public/build
-COPY --from=node_builder /app/bootstrap/ssr /var/www/app/bootstrap/ssr
+COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
+RUN composer install --optimize-autoloader --no-interaction --no-progress --prefer-dist
+RUN npm install
+RUN npm run build
+# COPY --from=composer_builder /app/vendor /var/www/app/vendor
+# COPY --from=node_builder /app/public/build /var/www/app/public/build
+# COPY --from=node_builder /app/bootstrap/ssr /var/www/app/bootstrap/ssr
 # Install Composer
 # COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
 # RUN composer install --optimize-autoloader --no-interaction --no-progress --prefer-dist
