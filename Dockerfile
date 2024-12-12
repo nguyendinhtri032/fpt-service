@@ -68,7 +68,7 @@ COPY --from=node_builder /app/bootstrap/ssr /var/www/app/bootstrap/ssr
 
 # Configure supervisord
 COPY docker/start-container /usr/local/bin/start-container
-COPY docker/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+COPY docker/supervisord.conf /etc/supervisor/supervisord.conf
 
 RUN mkdir -p /run/php/
 # RUN chown www-data:www-data /run
