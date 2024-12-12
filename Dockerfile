@@ -34,10 +34,9 @@ RUN apk update && apk add \
     bash \
     nginx \
     supervisor \
-    shadow
+    shadow \
+    nodejs 
 
-RUN curl -sL https://deb.nodesource.com/setup_${NODE_VERSION} | bash - \
-    && apk add --no-cache nodejs
 # Create user and group
 RUN groupadd --system --gid ${GROUP_GID} ${UGNAME} && \
     useradd --system --no-log-init --home-dir /home/${UGNAME} \
