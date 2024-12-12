@@ -73,7 +73,6 @@ COPY docker/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 RUN mkdir -p /run/php/
 # RUN chown www-data:www-data /run
 RUN chmod +x /usr/local/bin/start-container
-RUN php artisan inertia:start-ssr
 
 EXPOSE 8080
 ENTRYPOINT ["start-container"]
