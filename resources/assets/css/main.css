@@ -773,8 +773,8 @@ section,
     font-size: 2rem;
   }
   .feature-custom {
-    height: 250px !important;
-    background-position: -15px 30px !important;
+    height: 300px !important;
+    background-position: -120px 30px !important;
   }
 }
 .feature-custom {
@@ -998,6 +998,7 @@ section,
 }
 
 .about .about-description {
+  text-align: justify;
   margin-bottom: 2rem;
   color: color-mix(in srgb, var(--default-color), transparent 20%);
 }

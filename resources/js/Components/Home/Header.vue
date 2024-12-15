@@ -8,32 +8,32 @@
             </a>
             <nav id="navmenu" class="navmenu">
                 <ul>
-                    <li><a href="#hero" class="active">{{ $t('message.home') }}</a></li>
-                    <li><a href="#about">{{ $t('message.about') }}</a></li>
-                    <li><a href="#features">{{ $t('message.features') }}</a></li>
-                    <li><a href="#services">{{ $t('message.services') }}</a></li>
-                    <li><a href="#pricing">{{ $t('message.pricing') }}</a></li>
-                    <li class="dropdown"><a href="#"><span>{{ $t('message.dropdown') }}</span> <i
-                                class="bi bi-chevron-down toggle-dropdown"></i></a>
-                        <ul>
-                            <li><a href="#">Dropdown 1</a></li>
-                            <li class="dropdown"><a href="#"><span>{{ $t('message.deepDropdown') }}</span> <i
-                                        class="bi bi-chevron-down toggle-dropdown"></i></a>
-                                <ul>
-                                    <li><a href="#">Deep Dropdown 1</a></li>
-                                    <li><a href="#">Deep Dropdown 2</a></li>
-                                    <li><a href="#">Deep Dropdown 3</a></li>
-                                    <li><a href="#">Deep Dropdown 4</a></li>
-                                    <li><a href="#">Deep Dropdown 5</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Dropdown 2</a></li>
-                            <li><a href="#">Dropdown 3</a></li>
-                            <li><a href="#">Dropdown 4</a></li>
-                        </ul>
+                    <li>
+                        <a href="/" :class="{ active: route().current() === 'home' }">{{ $t('message.home') }}</a>
                     </li>
-                    <li><a href="#contact">{{ $t('message.contact') }}</a></li>
+                    <li>
+                        <Link href="/dich-vu-it" :class="{ active: route().current() === 'it' }">{{
+                        $t('message.it') }}</Link>
+                    </li>
+                    <li>
+                        <Link href="/dich-vu-internet" :class="{ active: route().current() === 'internet' }">{{
+                            $t('message.internet') }}</Link>
+                    </li>
+                    <li>
+                        <Link href="/camera" :class="{ active: route().current() === 'camera' }">{{ $t('message.camera')
+                        }}</Link>
+                    </li>
+                    <li>
+                        <Link href="/tin-tuc" :class="{ active: route().current() === 'tin-tuc' }">{{ $t('message.news')
+                        }}</Link>
+                    </li>
+                    <li>
+                        <Link href="/lien-he" :class="{ active: route().current() === 'contact' }">{{
+                            $t('message.contact') }}</Link>
+                    </li>
                 </ul>
+
+
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
             </nav>
 
@@ -49,6 +49,7 @@
     </header>
 </template>
 <script setup lang="ts">
+import { Link } from '@inertiajs/vue3';
 import { ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 

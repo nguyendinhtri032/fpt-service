@@ -2,22 +2,6 @@ ARG NODE_VERSION=20
 ARG UBUNTU_VERSION=20.04
 ARG PHP_VERSION=8.2
 
-# Stage 0: Build composer
-# FROM php:${PHP_VERSION}-fpm-alpine as composer_builder
-# WORKDIR /app
-# COPY --chmod=777 . .
-# COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
-# RUN composer install --optimize-autoloader --no-interaction --no-progress --prefer-dist
-
-# Stage 1: Build Node.js application
-# FROM node:${NODE_VERSION}-alpine AS node_builder
-# WORKDIR /app
-# COPY --chmod=777 . .
-# RUN npm install
-# COPY --from=composer_builder /app/vendor /app/vendor
-# RUN npm run build
-
-# Stage 2: Set up PHP environment
 FROM php:${PHP_VERSION}-fpm-alpine
 ARG USER_UID=1000
 ARG GROUP_GID=1000
@@ -51,9 +35,7 @@ COPY docker/nginx/nginx.conf /etc/nginx/nginx.conf
 COPY docker/nginx/conf.d /etc/nginx/conf.d/
 
 # Configure PHP-FPM
-# COPY docker/fpm-pool.conf /etc/php/${PHP_VERSION}/fpm/pool.d/www.conf
 COPY docker/fpm-pool.conf /usr/local/etc/php-fpm.conf
-# COPY docker/fpm-pool.conf /etc/php-fpm.d/www.conf
 
 COPY docker/php.ini /etc/php/${PHP_VERSION}/cli/conf.d/custom.ini
 COPY docker/php.ini /etc/php/${PHP_VERSION}/fpm/conf.d/custom.ini
@@ -64,12 +46,6 @@ COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
 RUN composer install --optimize-autoloader --no-interaction --no-progress --prefer-dist
 RUN npm install
 RUN npm run build
-# COPY --from=composer_builder /app/vendor /var/www/app/vendor
-# COPY --from=node_builder /app/public/build /var/www/app/public/build
-# COPY --from=node_builder /app/bootstrap/ssr /var/www/app/bootstrap/ssr
-# Install Composer
-# COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
-# RUN composer install --optimize-autoloader --no-interaction --no-progress --prefer-dist
 
 # Configure supervisord
 COPY docker/start-container /usr/local/bin/start-container

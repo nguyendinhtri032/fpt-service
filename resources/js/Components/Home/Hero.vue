@@ -10,7 +10,7 @@ import { Link } from '@inertiajs/vue3';
                 <div class="col-lg-6">
                     <div class="hero-content" data-aos="fade-up" data-aos-delay="200">
                         <div class="company-badge mb-4">
-                            <i class="bi bi-gear-fill me-2"></i>
+                            <i class="bi bi-globe2 me-2"></i> 
                             {{ $t('message.togetherTowardsSuccess') }}
                         </div>
 
@@ -21,7 +21,7 @@ import { Link } from '@inertiajs/vue3';
                             {{ $t('message.exclusiveForBusinesses') }}
                         </h1>
 
-                        <p class="mb-4 mb-md-5">
+                        <p class="mb-4 mb-md-5 text-justify">
                             <i class="bi bi-check2-all"></i> {{ $t('message.wifi') }}<br>
                             <i class="bi bi-check2-all"></i> {{ $t('message.noAdditionalApNeeded') }} <br>
                             <i class="bi bi-check2-all"></i> {{ $t('message.packageLossRateReduced') }}

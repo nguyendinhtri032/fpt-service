@@ -18,7 +18,21 @@ Route::get('/lien-he', function () {
     return Inertia::render('Contact');
 })->name('contact');
 
+Route::get('/dich-vu-internet', function () {
+    return Inertia::render('Internet');
+})->name('internet');
 
+Route::get('/dich-vu-it', function () {
+    return Inertia::render('IT');
+})->name('it');
+
+Route::get('/camera', function () {
+    return Inertia::render('Camera');
+})->name('camera');
+
+Route::get('/tin-tuc', function () {
+    return Inertia::render('News');
+})->name('news');
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

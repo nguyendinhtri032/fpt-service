@@ -5,13 +5,12 @@ import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { createSSRApp, DefineComponent, h } from 'vue';
 import { ZiggyVue } from '../../vendor/tightenco/ziggy';
 import i18n from './i18n';
-const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
 createServer((page) =>
     createInertiaApp({
         page,
         render: renderToString,
-        title: (title) => `${title} - ${appName}`,
+        title: (title) => `${title}`,
         resolve: (name) =>
             resolvePageComponent(
                 `./Pages/${name}.vue`,
