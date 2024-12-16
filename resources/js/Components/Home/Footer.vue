@@ -8,35 +8,23 @@
                         <span class="sitename">FPT Telecom</span>
                     </a>
                     <div class="footer-contact pt-3">
-                        <p> <strong>Address:</strong>
+                        <p> <strong>{{ $t('contact.location') }}:</strong>
                             <a
                                 href="https://www.google.com/maps/search/86+Road+Broklyn+Street,+600+New+York,+USA/@40.6897806,-74.0278086,12z/data=!3m1!4b1">
-                                <p>124 Đường Sương Nguyệt Anh, Phường Bến Thành, </p>
-                                <p>Quận 1, Thành phố Hồ Chí Minh</p>
+                                <p>{{ $t('contact.address') }}</p>
                             </a>
                         </p>
 
-                        <p><strong>Phone: </strong><a href="tel:0909873192">0909873192</a></p>
+                        <p><strong>{{ $t('contact.phone') }}: </strong><a href="tel:0909873192">0909873192</a></p>
                         <p><strong>Email: </strong><a href="mailto:anhdtn23@fpt.com">
                                 anhdtn23@fpt.com</a></p>
                     </div>
-                    <div class="social-links d-flex mt-4">
+                    <!-- <div class="social-links d-flex mt-4">
                         <a href=""><i class="bi bi-twitter-x"></i></a>
                         <a href=""><i class="bi bi-facebook"></i></a>
                         <a href=""><i class="bi bi-instagram"></i></a>
                         <a href=""><i class="bi bi-linkedin"></i></a>
-                    </div>
-                </div>
-
-                <div class="col-lg-2 col-md-3 footer-links">
-                    <h4>Useful Links</h4>
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About us</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Terms of service</a></li>
-                        <li><a href="#">Privacy policy</a></li>
-                    </ul>
+                    </div> -->
                 </div>
 
                 <div class="col-lg-2 col-md-3 footer-links">

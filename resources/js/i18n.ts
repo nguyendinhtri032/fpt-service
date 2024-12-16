@@ -1,4 +1,5 @@
 import { createI18n } from 'vue-i18n';
+import CallToAction from './Components/Home/CallToAction.vue';
 
 const messages = {
     en: {
@@ -86,15 +87,13 @@ const messages = {
         servicesOthers: 'And many other services.',
         contact: {
             title: 'Contact',
-            description:
-                'Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit',
             contactInfo: 'Contact information',
             location: 'Our location',
             address:
-                '124 Đường Sương Nguyệt Anh, Phường Bến Thành, Quận 1, Thành phố Hồ Chí Minh',
+                '124 Suong Nguyet Anh Street, Ben Thanh Ward, District 1, Ho Chi Minh City',
             phone: 'Phone Number',
             email: 'Email Address',
-            getInTouch: 'Get In Touch',
+            getInTouch: 'Contact us',
             form: {
                 name: 'Your Name',
                 email: 'Your Email',
@@ -105,7 +104,11 @@ const messages = {
                 errorMessage: 'Error message',
                 sentMessage: 'Your message has been sent. Thank you!',
             },
+            name: 'Your Name',
+            titleForm: 'Title',
+            content: 'Content',
         },
+        callToActionContent: "FPT Telecom proudly stands as a leading internet service provider in Vietnam, delivering superior internet speed, stable connectivity, and dedicated 24/7 customer support. We understand that the internet is not just a tool for work but also a bridge connecting you to the world. With flexible plans, cutting-edge technology, and extensive coverage, FPT Telecom is committed to providing a seamless online experience for work, study, and entertainment."
     },
     vi: {
         message: {
@@ -191,8 +194,6 @@ const messages = {
         servicesOthers: 'Và nhiều dịch vụ khác.',
         contact: {
             title: 'Liên Hệ',
-            description:
-                'Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit',
             location: 'Địa chỉ',
             contactInfo: 'Thông tin liên hệ',
             address:
@@ -210,7 +211,11 @@ const messages = {
                 errorMessage: 'Lỗi',
                 sentMessage: 'Tin nhắn của bạn đã được gửi. Cảm ơn bạn!',
             },
+            name: 'Tên',
+            titleForm: 'Tiêu đề',
+            content: 'Nội dung',
         },
+        callToActionContent: "FPT Telecom tự hào là nhà cung cấp dịch vụ mạng hàng đầu tại Việt Nam, mang đến cho bạn tốc độ internet vượt trội, đường truyền ổn định và dịch vụ chăm sóc khách hàng tận tâm 24/7. Chúng tôi hiểu rằng internet không chỉ là công cụ làm việc mà còn là cầu nối giữa bạn và thế giới. Với gói cước linh hoạt, công nghệ hiện đại và độ phủ sóng rộng khắp, FPT Telecom cam kết mang đến trải nghiệm trực tuyến mượt mà, từ làm việc, học tập, đến giải trí."
     },
 };
 

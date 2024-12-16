@@ -4,7 +4,6 @@
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
             <h2>{{ $t('contact.title') }}</h2>
-            <p>{{ $t('contact.description') }}</p>
         </div><!-- End Section Title -->
 
         <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -13,7 +12,6 @@
                 <div class="col-lg-5">
                     <div class="info-box" data-aos="fade-up" data-aos-delay="200">
                         <h3>{{ $t('contact.contactInfo') }}</h3>
-                        <p>{{ $t('contact.description') }}</p>
 
                         <div class="info-item" data-aos="fade-up" data-aos-delay="300">
                             <div class="icon-box">
@@ -53,14 +51,12 @@
                 <div class="col-lg-7">
                     <div class="contact-form" data-aos="fade-up" data-aos-delay="300">
                         <h3>{{ $t('contact.getInTouch') }}</h3>
-                        <p>{{ $t('contact.description') }}</p>
-
-                        <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up"
+                        <form action="" method="post" class="php-email-form" data-aos="fade-up"
                             data-aos-delay="200">
                             <div class="row gy-4">
 
                                 <div class="col-md-6">
-                                    <label for="fullName">Tên</label>
+                                    <label for="fullName">{{ $t('contact.name') }}</label>
                                     <input id="fullName" type="text" name="name" class="form-control">
                                 </div>
 
@@ -70,12 +66,12 @@
                                 </div>
 
                                 <div class="col-12">
-                                    <label for="subject">Tiêu đề</label>
+                                    <label for="subject">{{ $t('contact.titleForm') }}</label>
                                     <input id="subject" type="text" class="form-control" name="subject">
                                 </div>
 
                                 <div class="col-12">
-                                    <label for="message">Nội dung</label>
+                                    <label for="message">{{ $t('contact.content') }}</label>
                                     <textarea id="message" class="form-control" name="message" rows="6"></textarea>
                                 </div>
 

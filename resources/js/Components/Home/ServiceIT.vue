@@ -5,13 +5,11 @@ import { Link } from '@inertiajs/vue3';
 <template>
     <!-- Pricing Section -->
     <section id="pricing" class="pricing section light-background">
-
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
             <h2>{{ $t('message.price') }}</h2>
             <p>{{ $t('message.outsourcingItServices') }}</p>
         </div><!-- End Section Title -->
-
         <div class="container" data-aos="fade-up" data-aos-delay="100">
 
             <div class="row g-4 justify-content-center">
@@ -43,10 +41,10 @@ import { Link } from '@inertiajs/vue3';
                             </li>
                         </ul>
 
-                        <a href="#" class="btn btn-primary">
+                        <Link :href="route('contact')" class="btn btn-light">
                             {{ $t('message.registerNow') }}
                             <i class="bi bi-arrow-right"></i>
-                        </a>
+                        </Link>
                     </div>
                 </div>
 
@@ -112,10 +110,10 @@ import { Link } from '@inertiajs/vue3';
                             </li>
                         </ul>
 
-                        <a href="#" class="btn btn-primary">
+                        <Link :href="route('contact')" class="btn btn-light">
                             {{ $t('message.registerNow') }}
                             <i class="bi bi-arrow-right"></i>
-                        </a>
+                        </Link>
                     </div>
                 </div>
 
