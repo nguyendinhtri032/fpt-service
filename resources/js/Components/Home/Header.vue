@@ -2,18 +2,17 @@
     <header id="header" class="header d-flex align-items-center fixed-top">
         <div
             class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-
-            <a href="#" class="logo d-flex align-items-center me-auto me-xl-0">
-                <h1 class="sitename"><img src="/images/fpt-tel.svg" alt=""></h1>
-            </a>
+            <Link href="/" class="logo d-flex align-items-center me-auto me-xl-0">
+            <h1 class="sitename"><img src="/images/fpt-tel.svg" alt=""></h1>
+            </Link>
             <nav id="navmenu" class="navmenu">
                 <ul>
                     <li>
-                        <a href="/" :class="{ active: route().current() === 'home' }">{{ $t('message.home') }}</a>
+                        <Link href="/" :class="{ active: route().current() === 'home' }">{{ $t('message.home') }}</Link>
                     </li>
                     <li>
                         <Link href="/dich-vu-it" :class="{ active: route().current() === 'it' }">{{
-                        $t('message.it') }}</Link>
+                            $t('message.it') }}</Link>
                     </li>
                     <li>
                         <Link href="/dich-vu-internet" :class="{ active: route().current() === 'internet' }">{{

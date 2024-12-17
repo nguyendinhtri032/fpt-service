@@ -1,5 +1,4 @@
 import { createI18n } from 'vue-i18n';
-import CallToAction from './Components/Home/CallToAction.vue';
 
 const messages = {
     en: {
@@ -45,6 +44,7 @@ const messages = {
             years: 'Years',
             experienceInTelecommunicationService:
                 'Experience in telecommunication service',
+            internetService: 'Business Internet Services',
         },
         features: {
             quality: {
@@ -108,7 +108,9 @@ const messages = {
             titleForm: 'Title',
             content: 'Content',
         },
-        callToActionContent: "FPT Telecom proudly stands as a leading internet service provider in Vietnam, delivering superior internet speed, stable connectivity, and dedicated 24/7 customer support. We understand that the internet is not just a tool for work but also a bridge connecting you to the world. With flexible plans, cutting-edge technology, and extensive coverage, FPT Telecom is committed to providing a seamless online experience for work, study, and entertainment."
+        callToActionContent:
+            'FPT Telecom proudly stands as a leading internet service provider in Vietnam, delivering superior internet speed, stable connectivity, and dedicated 24/7 customer support. We understand that the internet is not just a tool for work but also a bridge connecting you to the world. With flexible plans, cutting-edge technology, and extensive coverage, FPT Telecom is committed to providing a seamless online experience for work, study, and entertainment.',
+        outService: 'Out Services',
     },
     vi: {
         message: {
@@ -152,6 +154,7 @@ const messages = {
             years: 'Năm',
             experienceInTelecommunicationService:
                 'Kinh nghiệm trong dịch vụ viễn thông',
+            internetService: 'Dịch vụ Internet doanh nghiệp',
         },
         features: {
             quality: {
@@ -215,7 +218,9 @@ const messages = {
             titleForm: 'Tiêu đề',
             content: 'Nội dung',
         },
-        callToActionContent: "FPT Telecom tự hào là nhà cung cấp dịch vụ mạng hàng đầu tại Việt Nam, mang đến cho bạn tốc độ internet vượt trội, đường truyền ổn định và dịch vụ chăm sóc khách hàng tận tâm 24/7. Chúng tôi hiểu rằng internet không chỉ là công cụ làm việc mà còn là cầu nối giữa bạn và thế giới. Với gói cước linh hoạt, công nghệ hiện đại và độ phủ sóng rộng khắp, FPT Telecom cam kết mang đến trải nghiệm trực tuyến mượt mà, từ làm việc, học tập, đến giải trí."
+        callToActionContent:
+            'FPT Telecom tự hào là nhà cung cấp dịch vụ mạng hàng đầu tại Việt Nam, mang đến cho bạn tốc độ internet vượt trội, đường truyền ổn định và dịch vụ chăm sóc khách hàng tận tâm 24/7. Chúng tôi hiểu rằng internet không chỉ là công cụ làm việc mà còn là cầu nối giữa bạn và thế giới. Với gói cước linh hoạt, công nghệ hiện đại và độ phủ sóng rộng khắp, FPT Telecom cam kết mang đến trải nghiệm trực tuyến mượt mà, từ làm việc, học tập, đến giải trí.',
+        outService: 'Dịch vụ của chúng tôi',
     },
 };
 

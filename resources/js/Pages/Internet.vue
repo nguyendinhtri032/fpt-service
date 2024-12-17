@@ -27,6 +27,7 @@ onMounted(() => {
         easing: 'ease',
         once: true,
     });
+    console.log('Page loaded:')
 });
 </script>
 <template>
@@ -34,13 +35,10 @@ onMounted(() => {
     <Head title="FPT Telecom - FPT Business" />
     <Header />
     <main class="main">
-        <Carousel />
         <Hero />
-        <Stats />
         <Feature />
         <Card />
         <CallToAction />
-        <ServiceIT />
     </main>
     <Footer />
     <ContactAction />

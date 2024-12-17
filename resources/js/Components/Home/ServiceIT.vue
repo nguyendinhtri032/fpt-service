@@ -8,7 +8,7 @@ import { Link } from '@inertiajs/vue3';
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
             <h2>{{ $t('message.price') }}</h2>
-            <p>{{ $t('message.outsourcingItServices') }}</p>
+            <h4>{{ $t('message.outsourcingItServices') }}</h4>
         </div><!-- End Section Title -->
         <div class="container" data-aos="fade-up" data-aos-delay="100">
 
@@ -23,7 +23,8 @@ import { Link } from '@inertiajs/vue3';
                             <span class="amount">990K</span>
                             <span class="period">/ tháng</span>
                         </div>
-                        <p class="description">Duy trì hệ thống CNTT ổn định, hỗ trợ xử lý sự cố từ xa..</p>
+                        <p class="">Duy trì hệ thống CNTT ổn định, hỗ trợ xử lý sự cố từ xa.</p>
+                        <p class="description">Phù hợp cho DN <30 Users.</p>
 
                         <h4>{{  $t('message.featuredIncluded') }}:</h4>
                         <ul class="features-list">
@@ -58,8 +59,8 @@ import { Link } from '@inertiajs/vue3';
                             <span class="amount">990K</span>
                             <span class="period">/ tháng</span>
                         </div>
-                        <p class="description">Tăng cường bảo mật dữ liệu, hỗ trợ tận nơi và từ xa không giới hạn.</p>
-
+                        <p class="">Tăng cường bảo mật dữ liệu, hỗ trợ tận nơi và từ xa không giới hạn.</p>
+                        <p class="description">Phù hợp cho DN <50 Users.</p>
                         <h4>{{  $t('message.featuredIncluded') }}:</h4>
                         <ul class="features-list">
                             <li>
@@ -92,8 +93,8 @@ import { Link } from '@inertiajs/vue3';
                             <span class="amount">Liên hệ</span>
                             <!-- <span class="period">/ month</span> -->
                         </div>
-                        <p class="description">Giải pháp toàn diện, ưu tiên hỗ trợ 24/7, bảo đảm an toàn và hiệu suất tối đa.</p>
-
+                        <p class="">Giải pháp toàn diện, ưu tiên hỗ trợ 24/7, bảo đảm an toàn và hiệu suất tối đa.</p>
+                        <p class="description">Phù hợp cho DN >50 Users.</p>
                         <h4>{{  $t('message.featuredIncluded') }}:</h4>
                         <ul class="features-list">
                             <li>
