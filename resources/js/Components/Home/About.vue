@@ -4,7 +4,7 @@
         <div class="container" data-aos="fade-up" data-aos-delay="100">
             <div class="row gy-4 align-items-center justify-content-between">
                 <div class="col-xl-5" data-aos="fade-up" data-aos-delay="200">
-                    <span class="about-meta">{{ $t('message.contact') }}</span>
+                    <span class="about-meta">{{ $t('message.about') }}</span>
                     <h2 class="about-title">{{ $t('companyMembership') }}</h2>
                     <p class="about-description">{{ $t('companyMission') }}</p>
                     <div class="row feature-list-wrapper">
