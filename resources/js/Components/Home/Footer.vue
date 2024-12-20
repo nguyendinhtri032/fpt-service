@@ -7,7 +7,7 @@ import { Link } from '@inertiajs/vue3';
 
         <div class="container footer-top">
             <div class="row gy-4">
-                <div class="col-lg-4 col-md-6 footer-about">
+                <div class="col-lg-8 col-md-8 footer-about">
                     <a href="index.html" class="logo d-flex align-items-center">
                         <span class="sitename">FPT Telecom</span>
                     </a>
@@ -25,7 +25,7 @@ import { Link } from '@inertiajs/vue3';
                     </div>
                 </div>
 
-                <div class="col-lg-2 col-md-3 footer-links">
+                <div class="col-lg-4 col-md-4 footer-links">
                     <h4>{{ $t('outService') }}</h4>
                     <ul>
                         <li>
