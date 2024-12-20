@@ -16,6 +16,7 @@ import Contact from '@/Components/Home/Contact.vue';
 import About from '@/Components/Home/About.vue';
 import CallToAction from '@/Components/Home/CallToAction.vue';
 import Stats from '@/Components/Home/Stats.vue';
+import CarouselIT from '@/Components/Home/CarouselIT.vue';
 defineProps<{
 }>();
 onMounted(() => {
@@ -32,7 +33,7 @@ onMounted(() => {
     <Head title="FPT Telecom - FPT Business" />
     <Header />
     <main class="main">
-        <Carousel />
+        <CarouselIT />
         <Hero />
         <Stats />
         <About />

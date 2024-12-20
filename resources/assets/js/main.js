@@ -147,7 +147,7 @@
   /**
    * Initiate Pure Counter
    */
-  new PureCounter();
+  // new PureCounter();
 
   /**
    * Frequently Asked Questions Toggle

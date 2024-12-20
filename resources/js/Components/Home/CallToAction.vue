@@ -13,8 +13,8 @@ import { Link } from '@inertiajs/vue3';
             <div class="row content justify-content-center align-items-center position-relative">
                 <div class="col-lg-3 col-xs-12">
                     <span>Gói Cước</span>
-                    <h1>LUX 800</h1>
-                    <span>Upload/Download 800 Mbps</span>
+                    <h1>LUX 500</h1>
+                    <span>Upload/Download 500 Mbps</span>
                 </div>
                 <div class="col-lg-3 col-xs-12 mt-2">
                     <div class="d-flex justify-content-center">
@@ -116,7 +116,7 @@ import { Link } from '@inertiajs/vue3';
                 </div>
                 <div class="col-lg-3 col-xs-12 d-flex flex-col">
                     <span>
-                        <span style="font-weight: 700; font-size: 50px;">800K</span>
+                        <span style="font-weight: 700; font-size: 50px;">1.000K</span>
                         <i></i>
                         / Tháng </span>
                     <Link :href="route('contact')" class="btn btn-cta">{{ $t('message.contact') }}</Link>

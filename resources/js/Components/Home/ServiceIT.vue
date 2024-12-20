@@ -56,7 +56,7 @@ import { Link } from '@inertiajs/vue3';
                         <h3>Gói Pro</h3>
                         <div class="price">
                             <!-- <span class="currency">VND</span> -->
-                            <span class="amount">990K</span>
+                            <span class="amount">1.990K</span>
                             <span class="period">/ tháng</span>
                         </div>
                         <p class="">Tăng cường bảo mật dữ liệu, hỗ trợ tận nơi và từ xa không giới hạn.</p>

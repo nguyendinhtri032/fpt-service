@@ -8,6 +8,7 @@ import Spinner from '@/Components/Home/Spinner.vue';
 import ServiceIT from '@/Components/Home/ServiceIT.vue';
 import Footer from '@/Components/Home/Footer.vue';
 import ContactAction from '@/Components/Home/ContactAction.vue';
+import CarouselIT from '@/Components/Home/CarouselIT.vue';
 defineProps<{
 }>();
 
@@ -25,6 +26,7 @@ onMounted(() => {
     <Header />
     <main class="main">
         <div class="mt-10">
+            <CarouselIT />
             <ServiceIT />
         </div>
     </main>

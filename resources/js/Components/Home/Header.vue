@@ -18,14 +18,14 @@
                         <Link href="/dich-vu-internet" :class="{ active: route().current() === 'internet' }">{{
                             $t('message.internet') }}</Link>
                     </li>
-                    <li>
+                    <!-- <li>
                         <Link href="/camera" :class="{ active: route().current() === 'camera' }">{{ $t('message.camera')
                         }}</Link>
                     </li>
                     <li>
                         <Link href="/tin-tuc" :class="{ active: route().current() === 'tin-tuc' }">{{ $t('message.news')
                         }}</Link>
-                    </li>
+                    </li> -->
                     <li>
                         <Link href="/lien-he" :class="{ active: route().current() === 'contact' }">{{
                             $t('message.contact') }}</Link>

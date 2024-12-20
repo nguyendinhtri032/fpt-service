@@ -51,18 +51,18 @@
                 <div class="col-lg-7">
                     <div class="contact-form" data-aos="fade-up" data-aos-delay="300">
                         <h3>{{ $t('contact.getInTouch') }}</h3>
-                        <form action="" method="post" class="php-email-form" data-aos="fade-up"
+                        <form action="/contact-form" method="post" class="php-email-form" data-aos="fade-up"
                             data-aos-delay="200">
                             <div class="row gy-4">
 
                                 <div class="col-md-6">
                                     <label for="fullName">{{ $t('contact.name') }}</label>
-                                    <input id="fullName" type="text" name="name" class="form-control">
+                                    <input id="fullName" type="text" name="name" class="form-control" required>
                                 </div>
 
                                 <div class="col-md-6">
                                     <label for="email">Email</label>
-                                    <input id="email" type="email" class="form-control" name="email">
+                                    <input id="email" type="email" class="form-control" name="email" required>
                                 </div>
 
                                 <div class="col-12">
