@@ -49,7 +49,7 @@
 </template>
 <script setup lang="ts">
 import { Link } from '@inertiajs/vue3';
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import { useI18n } from 'vue-i18n';
 
 const { locale } = useI18n();
@@ -58,4 +58,14 @@ const changeLanguage = (lang: string) => {
     language.value = lang;
     locale.value = lang;
 };
+onMounted(() => {
+    const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
+    function mobileNavToogle() {
+        document.querySelector('body').classList.toggle('mobile-nav-active');
+    }
+    if (mobileNavToggleBtn) {
+        mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
+    }
+    document.querySelector('body').classList.remove('mobile-nav-active');
+});
 </script>
