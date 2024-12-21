@@ -61,11 +61,11 @@ const changeLanguage = (lang: string) => {
 onMounted(() => {
     const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
     function mobileNavToogle() {
-        document.querySelector('body').classList.toggle('mobile-nav-active');
+        document.querySelector('body')?.classList.toggle('mobile-nav-active');
     }
     if (mobileNavToggleBtn) {
         mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
     }
-    document.querySelector('body').classList.remove('mobile-nav-active');
+    document.querySelector('body')?.classList.remove('mobile-nav-active');
 });
 </script>
