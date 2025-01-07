@@ -41,7 +41,7 @@
                                     <i class="bi bi-telephone-fill"></i>
                                     <div>
                                         <p class="contact-label">{{ $t('message.callUsAnytime') }}</p>
-                                        <p class="contact-number"><a href="tel:0909873192">0909873192</a></p>
+                                        <p class="contact-number"><a href="tel:0977465175">0977465175</a></p>
                                     </div>
                                 </div>
                             </div>

@@ -19,7 +19,7 @@ import { Link } from '@inertiajs/vue3';
                             </a>
                         </p>
 
-                        <p><strong>{{ $t('contact.phone') }}: </strong><a href="tel:0909873192">0909873192</a></p>
+                        <p><strong>{{ $t('contact.phone') }}: </strong><a href="tel:0977465175">0977465175</a></p>
                         <p><strong>Email: </strong><a href="mailto:anhdtn23@fpt.com">
                                 anhdtn23@fpt.com</a></p>
                     </div>

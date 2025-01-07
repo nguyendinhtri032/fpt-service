@@ -32,7 +32,7 @@
                             </div>
                             <div class="content">
                                 <h4>{{ $t('contact.phone') }}</h4>
-                                <p><a href="tel:0909873192">0909873192</a></p>
+                                <p><a href="tel:0977465175">0977465175</a></p>
                             </div>
                         </div>
 
