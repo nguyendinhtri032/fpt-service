@@ -14,7 +14,7 @@
     <meta property="og:url" content="{{ url()->current() }}" />
     <meta property="og:site_name" content="FPT Business" />
     <meta property="article:modified_time" content="2024-07-17T04:25:54+00:00" />
-    <meta property="og:image" content="@yield('og_image', asset('images/default-og-image.png'))" />
+    <meta property="og:image" content="@yield('og_image', asset('images/fpt-favicon.png'))" />
     <meta name="twitter:card" content="summary_large_image" />
     <!-- Google Tag Manager -->
     <script>
