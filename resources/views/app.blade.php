@@ -5,18 +5,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title inertia></title>
-    <title>FPT Telecom - FPT Business</title>
-    <link rel="canonical" href="{{ config('app.url') }}" />
+    <title inertia>{{ config('app.name', 'FPT Business') }}</title>
+    <link rel="canonical" href="{{ url()->current() }}" />
     <meta property="og:locale" content="vi_VN" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="FPT Telecom - FPT Business" />
-    <meta property="og:description"
-        content="GIẢI PHÁP IT OUTSOURCE TOÀN DIỆN 990K/ 1 Tháng NHÂN TƯ VẤN Dịch vụ INTERNET &#8211; WIFI DOANH NGHIỆP 545K/ 1 Tháng Công nghệ &amp; thiết bị Wi-Fi 6 ĐĂNG KÝ NGAY! GIẢI PHÁP TỪ FPT TELECOM Dịch Vụ Đề Xuất INTERNET CAMERA FPT Truyền hình Smart-Home IT OUTSOURCE BEST INTERNET Giải Pháp Internet Dành [&hellip;]" />
-    <meta property="og:url" content="https://fpt-doanhnghiep.com/" />
+    <meta property="og:title" content="@yield('og_title', 'FPT Telecom - FPT Business')" />
+    <meta property="og:description" content="@yield('og_description', 'GIẢI PHÁP IT OUTSOURCE TOÀN DIỆN...')" />
+    <meta property="og:url" content="{{ url()->current() }}" />
     <meta property="og:site_name" content="FPT Business" />
     <meta property="article:modified_time" content="2024-07-17T04:25:54+00:00" />
-    <meta property="og:image" content="{{ config('app.url') }}/Navy-Blue-Futuristic-Virtual-Technology-Banner-3.png" />
+    <meta property="og:image" content="@yield('og_image', asset('images/default-og-image.png'))" />
     <meta name="twitter:card" content="summary_large_image" />
     <!-- Google Tag Manager -->
     <script>
@@ -42,8 +40,8 @@
 
     <!-- Scripts -->
     <!-- Favicons -->
-    <link href="/images/fpt-favicon.png" rel="icon">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="/images/fpt-favicon.png" rel="icon" alt="FPT Telecom Logo">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" alt="Apple Touch Icon">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -54,6 +52,7 @@
     @routes
     @vite(['resources/js/app.ts', "resources/js/Pages/{$page['component']}.vue"])
     @inertiaHead
+    <meta name="description" content="@yield('meta_description', 'GIẢI PHÁP IT OUTSOURCE TOÀN DIỆN...')">
 </head>
 
 <body class="font-sans antialiased">
