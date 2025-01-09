@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title inertia>{{ config('app.name', 'FPT Business') }}</title>
-    <link rel="canonical" href="{{ url()->current() }}" />
     <meta property="og:locale" content="vi_VN" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="@yield('og_title', 'FPT Telecom - FPT Business')" />
@@ -15,7 +14,6 @@
     <meta property="og:site_name" content="FPT Business" />
     <meta property="article:modified_time" content="2024-07-17T04:25:54+00:00" />
     <meta property="og:image" content="@yield('og_image', asset('images/fpt-favicon.png'))" />
-    <meta name="twitter:card" content="summary_large_image" />
     <!-- Google Tag Manager -->
     <script>
         (function(w, d, s, l, i) {
